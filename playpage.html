@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="playpage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous">
+        </script>
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="topinfo">
+            <div class="toptime">◔ <span id="timer">00 : 00</span></div>
+            <div class="toppic">
+                <!-- <img src="https://i.ibb.co/4NQ4MHZ/testlogo-001-2.png" border="0"> -->
+            </div>
+            <div class="topnum">▞ <span id="play-times">00</span> ∥ 10</div>
+        </div>
+        <div class="username"></div>
+        <div id="result-area">
+
+        </div>
+
+        <div class="bottombox">
+            <div class="inputbox">
+                <div class="num input-num inputnum1">_</div>
+                <div class="num input-num inputnum2">_</div>
+                <div class="num input-num inputnum3">_</div>
+                <div class="num input-num inputnum4">_</div>
+            </div>
+
+            <div class="keyboard">
+                <div data-number="1" class="btn btn-number one">1</div>
+                <div data-number="2" class="btn btn-number two">2</div>
+                <div data-number="3" class="btn btn-number three">3</div>
+                <div data-number="4" class="btn btn-number four">4</div>
+                <div data-number="5" class="btn btn-number five">5</div>
+                <div data-number="6" class="btn btn-number six">6</div>
+                <div data-number="7" class="btn btn-number seven">7</div>
+                <div data-number="8" class="btn btn-number eight">8</div>
+                <div data-number="9" class="btn btn-number nine">9</div>
+                <div data-number="0" class="btn btn-number zero">0</div>
+            </div>
+            <div class="functionbtn">
+                <div class="btn delete">刪除</div>
+                <div class="btn ok">確認</div>
+
+            </div>
+        </div>
+
+        <div class="popcontainer">
+            <div class="result">太神啦！</div>
+            <div class="answerarea">
+                <div class="anstxt">答案</div>
+                <div class="answernum">0000</div>
+            </div>
+            <div class="showarea">
+                <div class="toptime">
+                    <div class="timeicon">◔</div>
+                    <div class="timenum">00:00</div>
+                </div>
+                <div class="topnum">
+                    <div class="stepicon">▞</div>
+                    <div class="stepnum"> <span id="finish-times"></span> ∥ 10</div>
+                </div>
+            </div>
+            <div class="keepPlaying">再玩一局</div>
+        </div>
+    </div>
+</body>
+<script src="./script/setting.js"></script>
+<script>
+    var inputPosition = 1;
+    var answerNumber = generateAnswer();
+    var answer = answerNumber.join('');
+    var END_INPUT_POSITION = 5;
+    var WIN_HINT = '4A0B';
+    var playTimes = 0;
+    var setMinute = 0;
+    var isFinish = false;
+    console.log(answer);
+
+    var timerId = window.setInterval("checkTime()", 1000);
+
+    $('.keepPlaying').click(function () {
+        window.location.href = "./playpage.html";
+    });
+
+    const generateTimer = () => {
+        setMinute += 1;
+        const minute = Math.floor(Math.floor(setMinute % 3600) / 60);
+        const second = setMinute % 60;
+
+        const displayMinute = minute > 9 ? minute : `0${minute}`;
+        const displaySecond = second > 9 ? second : `0${second}`;
+
+        return `${displayMinute} : ${displaySecond}`;
+    };
+
+    const checkTime = () => {
+        $('#timer').html(generateTimer());
+    }
+
+    const reGuess = () => {
+        inputPosition = 1;
+        [1, 2, 3, 4].forEach((number) => {
+            const input = $(`.inputnum${number}`).text();
+            $(`[data-number=${input}]`).removeAttr('disabled');
+        });
+        $('.input-num').text('');
+    }
+
+    const finishSetting = () => {
+        clearInterval(timerId);
+        isFinish = true;
+        $('.answernum').text(answer);
+        $('.timenum').text(generateTimer());
+        $('#finish-times').text(playTimes > 9 ? playTimes : `0${playTimes}`);
+        $('.popcontainer').show();
+    };
+
+    $(document).ready(function () {
+        $('.popcontainer').hide();
+        const nickname = getNickName();
+        $('.username').text(nickname);
+    });
+
+    $('.btn-number').click(function () {
+        if (inputPosition === END_INPUT_POSITION || isFinish) {
+            return;
+        }
+        const isDisabled = $(this).attr('disabled');
+        if (isDisabled === 'disabled') {
+            return;
+        }
+        const input = $(this).attr('data-number');
+        $(`.inputnum${inputPosition}`).text(input);
+        $(this).attr('disabled', true);
+        inputPosition += 1;
+    });
+
+    $('.delete').click(function () {
+        if (inputPosition === 1 || isFinish) {
+            return;
+        }
+        const current = inputPosition - 1;
+        const input = $(`.inputnum${current}`).text();
+        $(`[data-number=${input}]`).removeAttr('disabled');
+        $(`.inputnum${current}`).text('');
+        inputPosition -= 1;
+    });
+
+    $('.ok').click(function () {
+        if (inputPosition !== END_INPUT_POSITION || isFinish) {
+            return;
+        }
+        const numberOne = $('.inputnum1').text();
+        const numberTwo = $('.inputnum2').text();
+        const numberThree = $('.inputnum3').text();
+        const numberFour = $('.inputnum4').text();
+
+        const guessNumber = [
+            numberOne,
+            numberTwo,
+            numberThree,
+            numberFour
+        ];
+
+        const hint = getHint(guessNumber, answerNumber);
+        playTimes += 1;
+        $('#play-times').text(playTimes > 9 ? playTimes : `0${playTimes}`);
+
+        $('#result-area').append(`
+            <div class="showarea">
+                <div class="num playnum1">${numberOne}</div>
+                <div class="num playnum2">${numberTwo}</div>
+                <div class="num playnum3">${numberThree}</div>
+                <div class="num playnum4">${numberFour}</div>
+                <div class="showinfo">${hint}</div>
+            </div>
+            <hr>
+        `);
+
+        if (hint === WIN_HINT) {
+            finishSetting();
+            return;
+        }
+
+        if (playTimes === 10) {
+            $('.result').text('挑戰失敗');
+            finishSetting();
+            return;
+        }
+        reGuess();
+    });
+</script>
+
+</html>
