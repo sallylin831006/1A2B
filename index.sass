@@ -23,31 +23,20 @@ html,body
     align-items: center
     position: relative
 
-// .mode //點擊按鈕後，flex-direction: row-reverse，字體改成light//
-//     border: solid 2px $color_white
-//     width: 75px
-//     padding: 0px
-//     border-radius: 30px
-//     position: absolute
-//     top: 10px
-//     right: 20px
-//     display: inline-flex
-//     justify-content: center
-//     align-items: center
-//     flex-direction: row
-//     .modebtn
-//         border-radius: 50%
-//         width: 23px
-//         height: 23px
-//         padding: 0px
-//         margin: 0px 
-//         background-color: $color_yellow
-//         cursor: pointer
-//     .status
-//         font-size: 13px
-//         color: $color_white
-//         padding: 0px 10px 0px 10px
-//         margin: 0px
+.infobtn
+    font-family: Trebuchet MS
+    cursor: pointer
+    color: $color_white
+    font-size: 20px
+    width: 36px
+    height: 36px
+    line-height: 35px
+    text-align: center
+    border: 3px solid $color_white
+    border-radius: 50%
+    position: fixed
+    top: 10px
+    right: 20px
 
 
 .logo
@@ -69,12 +58,6 @@ html,body
     width: 110px
     height: 110px
 
-// .pic img
-//     display: block
-//     margin-left: -5px
-//     max-width: 120px
-//     max-height: 120px
-
 input
     width: 60%
     min-width: 200px
@@ -89,15 +72,6 @@ input
     text-align: center
     padding: 5px
 
-// .name
-//   //border: solid 1px #fff
-//   //width: 170px
-//   //height: 35px
-//     margin-top: 13px
-//     font-size: 15px
-//     font-family: 微軟正黑體
-//     text-align: center
-//     // line-height: 35px
 
 .block
     display: inline-block
@@ -132,6 +106,52 @@ input
     &:hover
         border: solid 2px $color_red
         color: $color_red
+
+//pop up info
+.popupinfo
+    width: 70%
+    height: 300px
+    min-width: 300px
+    margin: 0 auto
+    padding: 20px
+    padding-top: 50px
+    box-shadow: 1px 1px 20px rgba($color_white,0.2)
+    border-radius: 5px
+    background-color: $color_black
+    border: 0.2px solid $color_white
+    color: $color_white
+    font-size: 13px
+    font-weight: lighter
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    .title
+        font-weight: bold
+        font-size: 14px
+        margin: 0 auto
+        text-align: center
+    .boldname
+        color: #ff8738
+    .rule
+        border-bottom: 1.5px solid $color_white
+        text-align: center
+        width: 70px
+        margin: 0 auto
+        margin-top: 10px
+        margin-bottom: 20px
+        padding: 6px
+    .ex1,.ex2
+        display: block
+        margin: 0px
+        font-size: 10px
+        padding-left: 20px
+    .1,.2,.3
+        margin: 0 auto
+
+
 @media screen and ( max-width:320px  )
     html,body
         margin: 0px

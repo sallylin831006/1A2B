@@ -94,7 +94,6 @@
     var playTimes = 0;
     var setMinute = 0;
     var isFinish = false;
-
     var timerId = window.setInterval("checkTime()", 1000);
 
     $('.keepPlaying').click(function () {
@@ -141,7 +140,7 @@
     });
 
     $('.btn-number').click(function () {
-        if (inputPosition === END_INPUT_POSITION || isFinish) {
+        if (inputPosition === inputPosition || isFinish) {
             return;
         }
         const isDisabled = $(this).attr('disabled');

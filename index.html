@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/5223ebc999.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1A2B遊戲</title>
@@ -20,8 +21,8 @@
 <link rel="stylesheet" href="index.css">
 
 <body>
-
     <div class="container">
+        <div class="infobtn"><i class="fas fa-info"></i></div>
         <div class="logo">
             <div class="block block1">1</div>
             <div class="block block2">A</div>
@@ -36,6 +37,15 @@
             <input id="nickname" placeholder="請輸入玩家暱稱..." />
         </div>
         <div class="startbtn">遊戲開始</div>
+    </div>
+    <div class="popupinfo">
+        <p class="title"> <span class="boldname">1A2B猜數字</span>是流傳甚久的密碼破譯類益智小遊戲</p>
+        <p class="rule">遊戲規則</p>
+        <p class="1">① 猜4個不重複的數字</p>
+        <p class="2">② A 代表數字、位置皆對；B 代表數字對、但位置不對</p>
+        <span class="ex1">例：答案為4265時，猜4268，顯示3A0B。</span>
+        <span class="ex2">例：答案為8745時，猜8704，顯示1A3B。</span>
+        <p class="3">③ 挑戰者有10次挑戰機會，來挑戰看看吧！</p>
     </div>
 </body>
 <script src="./script/setting.js"></script>
@@ -54,10 +64,39 @@
         saveNickName(nickname);
         window.location.href = "./playpage.html";
     });
+//pop up info rule
 
-    $('.mode').click(function() {
-        $()
+// const finishSetting = () => {
+//         clearInterval(timerId);
+//         isFinish = true;
+//         $('.answernum').text(answer);
+//         $('.timenum').text(generateTimer());
+//         $('#finish-times').text(playTimes > 9 ? playTimes : `0${playTimes}`);
+//         $('.popcontainer').show();
+//     };
+
+//     $(document).ready(function () {
+//         $('.popcontainer').hide();
+//         const nickname = getNickName();
+//         $('.username').text(nickname);
+//     });
+
+    $(document).ready(function () {
+        $('.popupinfo').hide();
     });
+
+    $('.infobtn').click(function () {
+        $(".popupinfo").toggle();
+    });
+
+// const pop = document.querySelector(".popupinfo");
+// pop.addEventListener("click",function(e){
+//     if(e.target.nodename !=="popupinfo"){
+//         $('.popupinfo').hide();
+//     }
+// })
+
+    
 </script>
 
 </html>

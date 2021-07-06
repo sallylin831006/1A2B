@@ -2,9 +2,17 @@ const getNickName = () => {
     return window.localStorage.getItem('nickname') ?? '';
 }
 
-const saveNickName = (nickname) => {
-    window.localStorage.setItem("nickname", nickname)
+// function getNickName() {
+//     return window.localStorage.getItem('nickname') ?? '';
+// }
+
+const getNickName = () => {
+    return window.localStorage.getItem('nickname') ?? '';
 }
+
+const saveNickName = (nickname) => {
+    window.localStorage.setItem("nickname", nickname)}
+
 
 
 const generateAnswer = () => {
