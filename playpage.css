@@ -37,7 +37,7 @@ html, body {
   width: 60px;
   height: 60px;
   cursor: pointer;
-  filter: drop-shadow(0px 0px 2px #fff) contrast(90%);
+  filter: drop-shadow(0px 0px 2px #fff) contrast(110%);
 }
 
 .container .topinfo {
