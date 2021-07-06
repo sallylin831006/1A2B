@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/5223ebc999.js" crossorigin="anonymous"></script>
@@ -11,11 +12,12 @@
     <meta property="og:description" content="訓練邏輯與耐心的好遊戲！" />
     <title>1A2B遊戲排行</title>
     <link rel="stylesheet" href="rank.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
 </head>
 </head>
+
 <body>
     <div class="container">
         <h1>1A2B遊戲排行</h1>
@@ -23,40 +25,60 @@
             <i class="fas fa-redo-alt"></i>
             <div class="txt">再玩一局</div>
         </div>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">1</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">2</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">3</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">4</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">5</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">6</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">7</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">8</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num">9</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span class="num ten">10</span><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-
-
-<!-- 
-        <div class="rankline"><div class="circle" style="color:#C54C4D">1</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle" style="color:#C54C4D">2</div><div class="username">林阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle" style="color:#C54C4D">3</div><div class="username">阿婷阿婷阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">4</div><div class="username">阿婷阿婷阿婷阿婷阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">5</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">6</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">7</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">8</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">9</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
-        <div class="rankline"><div class="circle">10</div><div class="username">阿婷</div><div class="timenum">00:00</div><div class="stepnum"><span id="finish-times"></span> ∥ 10</div></div><hr>
- -->
-
+        <div id="result"></div>
     </div>
 
 </body>
 <script src="./script/setting.js"></script>
 <script>
-$('.playAgain_btn').click(function() {
-    window.location.href = "./index.html";
+    $('.playAgain_btn').click(function () {
+        window.location.href = "./index.html";
     })
 
-</script>
-</html>
+    $(document).ready(function () {
+        getRankData()
+    });
 
+    const generateTimer = (during) => {
+        const minute = Math.floor(Math.floor(during % 3600) / 60);
+        const second = during % 60;
+
+        const displayMinute = minute > 9 ? minute : `0${minute}`;
+        const displaySecond = second > 9 ? second : `0${second}`;
+
+        return `${displayMinute} : ${displaySecond}`;
+    };
+
+    const getRankData = () => {
+        $.ajax({
+            type: "GET",
+            url: getApi(),
+            async: false,
+            headers: {
+                "accept": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            dataType: 'json',
+            contentType: 'application/json; charset=UTF-8',
+            success: function (data) {
+                let renderData = '';
+                Object.keys(data).forEach((key) => {
+                    const userData = data[key];
+                    const timer = generateTimer(userData.during);
+                    renderData += `
+                        <div class="rankline"><span class="numicon"><i class="fas fa-certificate fa-2x"></i></span><span
+                                class="num">${key}</span>
+                            <div class="username">${userData.nickname}</div>
+                            <div class="timenum">${timer}</div>
+                            <div class="stepnum"><span id="finish-times"></span> ∥ ${userData.times}</div>
+                        </div>
+                        <hr>
+                    `;
+                });
+                $('#result').html(renderData);
+            }
+        });
+    }
+</script>
+
+</html>
