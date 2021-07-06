@@ -59,22 +59,13 @@
 
     $('.startbtn').click(function () {
         const nickname = $('#nickname').val();
-        if (nickname === '') {
+        if (nickname.trim() === '') {
             alert('請輸入暱稱');
             return;
         }
         saveNickName(nickname);
         window.location.href = "./playpage.html";
     });
-
-    const finishSetting = () => {
-        clearInterval(timerId);
-        isFinish = true;
-        $('.answernum').text(answer);
-        $('.timenum').text(generateTimer());
-        $('#finish-times').text(playTimes > 9 ? playTimes : `0${playTimes}`);
-        $('.popcontainer').show();
-    };
 
     $('.infobtn').click(function () {
         $(".popupinfo").toggle();
