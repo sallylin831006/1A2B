@@ -33,11 +33,11 @@ html, body {
 .container .showrank {
   position: fixed;
   top: 60px;
-  right: 30px;
+  right: 10px;
   width: 60px;
   height: 60px;
   cursor: pointer;
-  filter: drop-shadow(0px 0px 5px #fff) contrast(110%);
+  filter: drop-shadow(0px 0px 2px #fff) contrast(90%);
 }
 
 .container .topinfo {
@@ -49,29 +49,26 @@ html, body {
   align-items: center;
 }
 
-.container #play-times {
-  color: #C54C4D;
-}
-
-.container .toptime {
+.container .topinfo .toptime {
   font-size: 25px;
   display: flex;
   align-items: center;
 }
 
-.container #timer {
+.container .topinfo #timer {
   font-size: 16px;
   margin-left: 5px;
 }
 
-.container .toppic {
+.container .topinfo .toppic {
   width: 52px;
   height: 52px;
   border: 3px solid #fff;
   border-radius: 50%;
 }
 
-.container .topnum {
+.container .topinfo #play-times {
+  color: #C54C4D;
   font-size: 16px;
 }
 
@@ -200,25 +197,9 @@ html, body {
   box-shadow: 0px 0px 17px -1px rgba(255, 255, 255, 0.2);
 }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 30px;
-  font-size: 30px;
-  font-weight: lighter;
-  color: grey;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #fff;
-  font-size: 32px;
-  font-weight: bolder;
-}
-
 .result {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 25px;
   color: #FBC439;
 }
 
@@ -256,8 +237,9 @@ html, body {
 }
 
 .showarea .stepicon {
-  font-size: 25px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 6px;
+  line-height: 25px;
 }
 
 .showarea .timenum, .showarea .stepnum {
@@ -268,7 +250,7 @@ html, body {
 .keepPlaying {
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 500px;
   text-align: center;
   padding: 10px;
   border: solid 2px #58B8E1;

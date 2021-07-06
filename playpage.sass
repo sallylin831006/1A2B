@@ -39,11 +39,10 @@ html, body
     .showrank
         position: fixed
         top: 60px
-        right: 30px
-        width: 60px
-        height: 60px
+        right: 10px
+        +size(60px,60px)
         cursor: pointer
-        filter: drop-shadow(0px 0px 5px $color_white) contrast(110%)
+        filter: drop-shadow(0px 0px 2px $color_white) contrast(90%)
 
     
     .topinfo
@@ -53,24 +52,20 @@ html, body
         display: flex
         justify-content: space-around
         align-items: center
-        
-    #play-times //*沒改到*/
-        color: $color_red
-
-    .toptime
-        font-size: 25px
-        display: flex
-        align-items: center
-    #timer
-        font-size: 16px
-        margin-left: 5px
-    .toppic
-            +size(52px,52px)
-            border: 3px solid $color_white
-            border-radius: 50%
-    .topnum
-        font-size: 16px
-
+        .toptime
+            font-size: 25px
+            display: flex
+            align-items: center
+        #timer
+            font-size: 16px
+            margin-left: 5px
+        .toppic
+                +size(52px,52px)
+                border: 3px solid $color_white
+                border-radius: 50%
+        #play-times
+                color: $color_red
+                font-size: 16px
     .username
             width: 80%
             min-width: 300px
@@ -141,8 +136,7 @@ html, body
             //padding: 5px
             // border: solid 2px $color_blue
             border-radius: 9px
-            width: 48px
-            height: 48px
+            +size(48px,48px)
             line-height: 48px
             text-align: center
             font-size: 15px
@@ -161,8 +155,7 @@ html, body
             justify-content: center
             .delete ,.ok
                 margin: 0 auto
-                width: 100px
-                height: 48px
+                +size(100px,48px)
                 min-width: 60px
                 line-height: 48px
                 text-align: center
@@ -188,7 +181,7 @@ html, body
     box-shadow: 0px 0px 17px -1px rgba($color_white,0.2)
 
 
-.close
+// .close
     position: absolute
     top: 15px
     right: 30px
@@ -203,7 +196,7 @@ html, body
 
 .result
     text-align: center
-    margin-top: 30px
+    margin-top: 25px
     color: $color_yellow
     
 .answerarea
@@ -230,22 +223,18 @@ html, body
         font-size: 40px
         padding: 10px
         line-height: 25px
-        
     .stepicon
-        font-size: 25px
-        padding: 10px
-
-
+        font-size: 20px
+        padding: 6px
+        line-height: 25px
     .timenum, .stepnum
         font-size: 20px
         color: #fff
-
     
-        
 .keepPlaying
     margin: 0 auto
     margin-top: 20px
-    margin-bottom: 10px
+    margin-bottom: 500px
     text-align: center
     padding: 10px
     border: solid 2px $color_blue
