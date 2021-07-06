@@ -6,13 +6,6 @@ const saveNickName = (nickname) => {
     window.localStorage.setItem("nickname", nickname)
 }
 
-const getTheme = () => {
-    return window.localStorage.getItem('theme') ?? 'dark';
-}
-
-const saveTheme = (theme) => {
-    window.localStorage.setItem("theme", theme);
-}
 
 const generateAnswer = () => {
     let candidateNumbers = [];
