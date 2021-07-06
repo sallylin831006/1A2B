@@ -19,7 +19,10 @@
 
 <body>
     <div class="container">
-        <img src="https://i.ibb.co/ZxcNCJx/rank-icon-002png-001.png" alt="rank" class="showrank">
+        <div class="rank_btn">
+            <i class="fas fa-crown"></i><div class="txt">排行榜</div>
+        </div>
+        <!-- <img src="https://i.ibb.co/ZxcNCJx/rank-icon-002png-001.png" alt="rank" class="showrank"> -->
         <div class="topinfo">
             <div class="toptime">
                 <i class="fas fa-hourglass-half fa-xs"></i>
@@ -206,7 +209,7 @@
         reGuess();
     });
 //點選Rank按鈕跳轉至排行頁面
-$('.showrank').click(function() {
+$('.rank_btn').click(function() {
         window.location.href = "./rank.html";
         });
 </script>

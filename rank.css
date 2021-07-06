@@ -22,7 +22,7 @@ html, body {
   transform: translateX(-50%) translateY(-50%);
   max-width: 400px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 20px;
   background-color: #2D2D3A;
   color: #fff;
   box-shadow: 0px 0px 17px -1px rgba(255, 255, 255, 0.1);
@@ -36,37 +36,21 @@ html, body {
   margin-bottom: 30px;
 }
 
-.container .btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container .playAgain_btn {
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 5px;
   position: fixed;
   top: 20px;
   right: 15px;
-  color: #8CC554;
-}
-
-.container .playagain {
-  cursor: pointer;
-  border-radius: 10px;
-  width: 50px;
-  height: 50px;
-  line-height: 45px;
-  font-size: 20px;
+  padding: 5px;
   text-align: center;
-  font-weight: 900;
-  color: #fff;
-  background-color: #2D2D3A;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.6);
 }
 
-.container .playagain:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.container .txt {
-  font-size: 10px;
-  margin-top: 5px;
+.container .playAgain_btn .txt {
+  font-size: 7px;
 }
 
 .container .rankline {
@@ -77,24 +61,28 @@ html, body {
   align-items: center;
 }
 
-.container .rankline .circle {
-  width: 40px;
-  height: 40px;
-  line-height: 38px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: #FBC439;
+.container .rankline .numicon {
+  color: #FBC439;
+  margin: 5px 0px 2px 20px;
+  padding-left: 0px;
+}
+
+.container .rankline .num {
   color: #2D2D3A;
+  margin-left: -21px;
+  margin-top: 2px;
   font-weight: 900;
-  margin: 5px;
-  border: 2px solid black;
+}
+
+.container .rankline .ten {
+  margin-left: -24px;
 }
 
 .container .rankline .username {
-  width: 160px;
+  width: 150px;
   margin: 0 auto;
   text-align: center;
-  padding-left: 15px;
+  padding-left: 13px;
 }
 
 .container .rankline .timenum, .container .rankline .stepnum {
@@ -108,7 +96,7 @@ html, body {
   height: 0px;
   border: none;
   border-top: 0.5px dashed grey;
-  width: 70%;
+  width: 78%;
   min-width: 100px;
-  margin-left: 70px;
+  margin-left: 55px;
 }
