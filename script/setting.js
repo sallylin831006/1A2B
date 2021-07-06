@@ -2,18 +2,13 @@ const getNickName = () => {
     return window.localStorage.getItem('nickname') ?? '';
 }
 
-// function getNickName() {
-//     return window.localStorage.getItem('nickname') ?? '';
-// }
-
-const getNickName = () => {
-    return window.localStorage.getItem('nickname') ?? '';
+const saveNickName = (nickname) => {
+    window.localStorage.setItem("nickname", nickname)
 }
 
-const saveNickName = (nickname) => {
-    window.localStorage.setItem("nickname", nickname)}
-
-
+const getApi = () => {
+    return 'https://sally.dev.newideas.com.tw/';
+}
 
 const generateAnswer = () => {
     let candidateNumbers = [];
