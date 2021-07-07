@@ -4,7 +4,7 @@ $color_green: #8CC554
 $color_red: #C54C4D
 $color_yellow: #FBC439
 *
-    //border: solid 1px green
+    //border: solid 1px pink
     margin: 10px 0px 10px 0px
     user-select: none
 html,body
@@ -93,7 +93,7 @@ input
 
 .startbtn
     margin-top: 35px
-    margin-bottom: 100px
+    margin-bottom: 10px
     border: solid 2px $color_yellow
     border-radius: 9px
     min-width: 120px
@@ -104,8 +104,20 @@ input
     color: $color_white
     cursor: pointer
     &:hover
-        border: solid 2px $color_red
-        color: $color_red
+        border: solid 2px $color_yellow
+        color: $color_yellow
+        background-color: rgba($color_white,0.1)
+
+.rankLink
+    cursor: pointer
+    color: $color_white
+    margin-bottom: 100px
+    font-size: 12px
+    border-bottom: 2px solid $color_white
+    height: 30px
+    width: 82px
+    font-weight: lighter
+
 
 //pop up info
 .popupinfo

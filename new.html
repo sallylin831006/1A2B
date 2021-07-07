@@ -1,0 +1,152 @@
+//play page
+
+<script src="./script/setting.js"></script>
+<script>
+    var inputPosition = 1;
+    var answerNumber = generateAnswer();
+    var answer = answerNumber.join('');
+    var END_INPUT_POSITION = 5;
+    var WIN_HINT = '4A0B';
+    var playTimes = 0;
+    var setMinute = 0;
+    var isFinish = false;
+    var timerId = window.setInterval("checkTime()", 1000);
+
+    $('.keepPlaying').click(function () {
+        window.location.href = "./playpage.html";
+    });
+
+    // const setRank = () => {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: getApi(),
+    //         async: false,
+    //         headers: {
+    //             "accept": "application/json",
+    //             "Access-Control-Allow-Origin": "*"
+    //         },
+    //         data: JSON.stringify({
+    //             nickname: getNickName(),
+    //             during: setMinute,
+    //             times: playTimes
+    //         }),
+    //         dataType: 'json',
+    //         contentType: 'application/json; charset=UTF-8',
+    //         success: function (returnData) {}
+    //     });
+    // }
+
+    const generateTimer = () => {
+        setMinute += 1;
+        const minute = Math.floor(Math.floor(setMinute % 3600) / 60);
+        const second = setMinute % 60;
+
+        const displayMinute = minute > 9 ? minute : `0${minute}`;
+        const displaySecond = second > 9 ? second : `0${second}`;
+
+        return `${displayMinute} : ${displaySecond}`;
+    };
+
+    const checkTime = () => {
+        $('#timer').html(generateTimer());
+    }
+
+    const reGuess = () => {
+        inputPosition = 1;
+        [1, 2, 3, 4].forEach((number) => {
+            const input = $(`.inputnum${number}`).text();
+            $(`[data-number=${input}]`).removeAttr('disabled');
+        });
+        $('.input-num').text('');
+    }
+
+    const finishSetting = () => {
+        clearInterval(timerId);
+        isFinish = true;
+        $('.answernum').text(answer);
+        $('.timenum').text(generateTimer());
+        $('#finish-times').text(playTimes > 9 ? playTimes : `0${playTimes}`);
+        $('.popcontainer').show();
+    };
+
+    $(document).ready(function () {
+        $('.popcontainer').hide();
+        const nickname = getNickName();
+        $('.username').text(nickname);
+    });
+
+    $('.btn-number').click(function () {
+        if (inputPosition === END_INPUT_POSITION || isFinish) {
+            return;
+        }
+        const isDisabled = $(this).attr('disabled');
+        if (isDisabled === 'disabled') {
+            return;
+        }
+        const input = $(this).attr('data-number');
+        $(`.inputnum${inputPosition}`).text(input);
+        $(this).attr('disabled', true);
+        inputPosition += 1;
+    });
+
+    $('.delete').click(function () {
+        if (inputPosition === 1 || isFinish) {
+            return;
+        }
+        const current = inputPosition - 1;
+        const input = $(`.inputnum${current}`).text();
+        $(`[data-number=${input}]`).removeAttr('disabled');
+        $(`.inputnum${current}`).text('');
+        inputPosition -= 1;
+    });
+
+    $('.ok').click(function () {
+        if (inputPosition !== END_INPUT_POSITION || isFinish) {
+            return;
+        }
+        const numberOne = $('.inputnum1').text();
+        const numberTwo = $('.inputnum2').text();
+        const numberThree = $('.inputnum3').text();
+        const numberFour = $('.inputnum4').text();
+
+        const guessNumber = [
+            numberOne,
+            numberTwo,
+            numberThree,
+            numberFour
+        ];
+
+        const hint = getHint(guessNumber, answerNumber);
+        playTimes += 1;
+        $('#play-times').text(playTimes > 9 ? playTimes : `0${playTimes}`);
+
+        $('#result-area').append(`
+            <div class="showarea">
+                <div class="num playnum1">${numberOne}</div>
+                <div class="num playnum2">${numberTwo}</div>
+                <div class="num playnum3">${numberThree}</div>
+                <div class="num playnum4">${numberFour}</div>
+                <div class="showinfo">${hint}</div>
+            </div>
+            <hr>
+        `);
+
+        if (hint === WIN_HINT) {
+            finishSetting();
+            setRank();
+            return;
+        }
+
+        if (playTimes === 10) {
+            $('.result').text('挑戰失敗QQ');
+            finishSetting();
+            return;
+        }
+        reGuess();
+    });
+
+    //點選Rank按鈕跳轉至排行頁面
+    $('.rank_btn').click(function () {
+        window.location.href = "./rank.html";
+    });
+</script>

@@ -37,6 +37,7 @@
             <input id="nickname" placeholder="請輸入玩家暱稱..." />
         </div>
         <div class="startbtn">遊戲開始</div>
+        <div class="rankLink"><i class="fas fa-crown"></i> 高手風雲榜</div>
     </div>
     <div class="popupinfo">
         <div class="close"><i class="fas fa-times"></i></div>
@@ -73,6 +74,9 @@
     $('.close').click(function () {
         $('.popupinfo').hide();
     });    
+    $('.rankLink').click(function () {
+        window.location.href = "./rank.html";
+    })
 </script>
 
 </html>

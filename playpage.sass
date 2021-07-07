@@ -38,13 +38,13 @@ html, body
     .rank_btn
         cursor: pointer
         position: fixed
-        top: 60px
-        right: 5px
+        top: 55px
+        right: 2px
         border: 1px solid $color_white
         border-radius: 5px
         padding: 5px
         text-align: center
-        font-size: 20px
+        font-size: 16px
         background-color: $color_black
         box-shadow: 3px 2px 5px 0px rgba(black,0.6)
 
@@ -67,6 +67,7 @@ html, body
         display: flex
         justify-content: space-around
         align-items: center
+        padding-bottom: 20px
         .toptime
             font-size: 25px
             display: flex
@@ -74,46 +75,41 @@ html, body
         #timer
             font-size: 16px
             margin-left: 5px
-        .toppic
-                +size(52px,52px)
-                border: 3px solid $color_white
-                border-radius: 50%
+        // .toppic
+        //         +size(52px,52px)
+        //         border: 3px solid $color_white
+        //         border-radius: 50%
         #play-times
                 color: $color_yellow
                 font-size: 16px
     .username
-            width: 80%
-            min-width: 300px
+            width: 60px
             margin: 0 auto
             text-align: center
-            font-size: 12px
+            font-size: 15px
             padding-top: 5px
-            color: $color_white
+            color: $color_green
+            font-weight: lighter
     
     #result-area
         //background-color: #4d2222
-        height: 260px
+        height: 290px
 
     .showarea
         //padding: 0px 50px 0px 50px
         width: 80%
-        min-width: 300px
+        min-width: 280px
         margin: 0 auto
         display: flex
         justify-content: space-around
         .num,.showinfo
             font-size: 18px
-            font-family: Comic Sans MS
     hr
         height: 0px
         border: none
         border-top: 0.5px dashed grey
         width: 80%
         min-width: 300px
-
-        .num
-            border-bottom: 4px solid $color_white
-            //padding-bottom: 1px
         
     .bottombox
         padding: 2px
@@ -135,7 +131,7 @@ html, body
             font-size: 25px
             color: $color_green
             border-bottom: 4px solid $color_white
-            margin-bottom: 7px
+            margin-bottom: 5px
 
         .keyboard
             display: flex
@@ -143,21 +139,20 @@ html, body
             justify-content: center
             align-items: center
             width: 90%
-            min-width: 305px
+            min-width: 300px
             margin: 0 auto
-            padding: 5px
+            padding: 4px
         .btn
-            margin: 5px
+            margin: 4px
             //padding: 5px
             // border: solid 2px $color_blue
             border-radius: 9px
-            +size(48px,48px)
-            line-height: 48px
+            +size(50px,51px)
+            line-height: 50px
             text-align: center
-            font-size: 15px
+            font-size: 16px
             cursor: pointer
             box-shadow: 0px 0px 17px -1px rgba($color_white,0.2)
-
             &:hover
                 background-color: rgba($color_white,0.5)
                 border: solid 2px black
@@ -177,7 +172,6 @@ html, body
                 margin: 0px 20px 5px 20px
                 cursor: pointer
 
-                
 
 //pop up
 .popcontainer
@@ -194,20 +188,6 @@ html, body
     color: $color_white
     border-radius: 10px
     box-shadow: 0px 0px 17px -1px rgba($color_white,0.2)
-
-
-// .close
-    position: absolute
-    top: 15px
-    right: 30px
-    font-size: 30px
-    font-weight: lighter
-    color: grey
-    cursor: pointer
-    &:hover
-        color: $color_white
-        font-size: 32px
-        font-weight: bolder
 
 .result
     text-align: center
@@ -262,10 +242,9 @@ html, body
         border: solid 2px black
         color: $color_white
 
-
 @media screen and ( max-width: 375px)
     .container
-        max-width: 360px
+        max-width: 365px
         .topinfo
             width: 70%
         .showarea
@@ -278,3 +257,4 @@ html, body
             max-width: 250px
             padding: 5px 10px 0px 10px
 
+   

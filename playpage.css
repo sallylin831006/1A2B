@@ -32,13 +32,13 @@ html, body {
 .container .rank_btn {
   cursor: pointer;
   position: fixed;
-  top: 60px;
-  right: 5px;
+  top: 55px;
+  right: 2px;
   border: 1px solid #fff;
   border-radius: 5px;
   padding: 5px;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
   background-color: #2D2D3A;
   box-shadow: 3px 2px 5px 0px rgba(0, 0, 0, 0.6);
 }
@@ -54,6 +54,7 @@ html, body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .container .topinfo .toptime {
@@ -67,35 +68,28 @@ html, body {
   margin-left: 5px;
 }
 
-.container .topinfo .toppic {
-  width: 52px;
-  height: 52px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-}
-
 .container .topinfo #play-times {
   color: #FBC439;
   font-size: 16px;
 }
 
 .container .username {
-  width: 80%;
-  min-width: 300px;
+  width: 60px;
   margin: 0 auto;
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
   padding-top: 5px;
-  color: #fff;
+  color: #8CC554;
+  font-weight: lighter;
 }
 
 .container #result-area {
-  height: 260px;
+  height: 290px;
 }
 
 .container .showarea {
   width: 80%;
-  min-width: 300px;
+  min-width: 280px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -103,7 +97,6 @@ html, body {
 
 .container .showarea .num, .container .showarea .showinfo {
   font-size: 18px;
-  font-family: Comic Sans MS;
 }
 
 .container hr {
@@ -112,10 +105,6 @@ html, body {
   border-top: 0.5px dashed grey;
   width: 80%;
   min-width: 300px;
-}
-
-.container hr .num {
-  border-bottom: 4px solid #fff;
 }
 
 .container .bottombox {
@@ -137,7 +126,7 @@ html, body {
   font-size: 25px;
   color: #8CC554;
   border-bottom: 4px solid #fff;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 }
 
 .container .bottombox .keyboard {
@@ -146,19 +135,19 @@ html, body {
   justify-content: center;
   align-items: center;
   width: 90%;
-  min-width: 305px;
+  min-width: 300px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 4px;
 }
 
 .container .bottombox .btn {
-  margin: 5px;
+  margin: 4px;
   border-radius: 9px;
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
+  width: 50px;
+  height: 51px;
+  line-height: 50px;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   box-shadow: 0px 0px 17px -1px rgba(255, 255, 255, 0.2);
 }
@@ -275,7 +264,7 @@ html, body {
 
 @media screen and (max-width: 375px) {
   .container {
-    max-width: 360px;
+    max-width: 365px;
   }
   .container .topinfo {
     width: 70%;
