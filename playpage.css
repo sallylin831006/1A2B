@@ -84,7 +84,7 @@ html, body {
 }
 
 .container #result-area {
-  height: 290px;
+  height: 280px;
 }
 
 .container .showarea {
@@ -363,6 +363,6 @@ html, body {
     display: none;
   }
   .container .result-area {
-    height: 250px;
+    height: 200px;
   }
 }
