@@ -39,7 +39,7 @@ html, body {
   border-radius: 50%;
   position: fixed;
   top: 10px;
-  right: 20px;
+  right: 1px;
 }
 
 .logo {
@@ -230,5 +230,20 @@ input {
   .container {
     max-width: 320px;
     max-height: 560px;
+  }
+  .container .infobtn {
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 15px;
+    top: 5px;
+    right: 1px;
+    margin-top: -5px;
+  }
+  .container .logo {
+    margin-top: 60px;
+  }
+  .container .startbtn {
+    margin-top: 10px;
   }
 }
