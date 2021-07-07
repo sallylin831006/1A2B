@@ -40,8 +40,16 @@ html, body {
   font-size: 30px;
   cursor: pointer;
   position: fixed;
-  top: 32px;
-  right: 30px;
+  top: 23px;
+  left: 27px;
+}
+
+.container #playicon {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 23px;
+  right: 23px;
 }
 
 .container .rankline {
@@ -63,6 +71,8 @@ html, body {
   margin-left: -21px;
   margin-top: 2px;
   font-weight: 900;
+  text-align: center;
+  padding: 0px;
 }
 
 .container .rankline .username {
