@@ -29,7 +29,7 @@ html, body
     left: 50%
     top: 50%
     transform: translateX(-50%) translateY(-50%)
-    max-width: 500px
+    max-width: 700px
     margin: 0 auto
     padding: 15px
     background-color: $color_black
@@ -242,9 +242,57 @@ html, body
         border: solid 2px black
         color: $color_white
 
+@media screen and ( min-width: 765px)
+    .container
+        width: 95%
+        max-width: 760px
+        .topinfo
+            width: 80%
+            min-width: 500px
+            padding-bottom: 15px
+            .toptime
+                font-size: 37px
+            .topnum,#timer,#play-times
+                font-size: 20px
+        .username
+            font-size: 20px
+            font-weight: bold
+        .showarea
+            width: 400px
+            .num,.showinfo
+                font-size: 25px
+        #result-area
+            height: 400px
+        .bottombox
+            width: 600px
+            .inputbox
+                width: 70%
+                height: 55px
+                min-width: 200px
+            .inputnum1,.inputnum2,.inputnum3,.inputnum4
+                font-size: 40px
+                border-bottom: 4px solid $color_white
+            .keyboard
+                min-width: 500px
+                padding: 4px
+                .btn
+                    margin: 10px
+                    +size(70px,70px)
+                    line-height: 69px
+                    font-size: 25px
+            .functionbtn
+                min-width: 450px
+                .delete ,.ok
+                    +size(150px,60px)
+                    min-width: 60px
+                    line-height: 59px
+        .popcontainer
+            min-width: 500px
+
+
 @media screen and ( max-width: 375px)
     .container
-        max-width: 365px
+        max-width: 370px
         .topinfo
             width: 70%
         .showarea
@@ -257,4 +305,17 @@ html, body
             max-width: 250px
             padding: 5px 10px 0px 10px
 
-   
+@media screen and ( max-width: 320px )
+    .container
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateX(-50%) translateY(-50%)
+        width: 100%
+        max-width: 320px
+        margin: 0 auto
+        padding: 5px
+        .rank_btn
+            display: none
+        .result-area
+            height: 250px

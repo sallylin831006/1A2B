@@ -13,6 +13,10 @@ html, body {
 }
 
 .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
   border: solid 1px #2D2D3A;
   max-width: 400px;
   margin: 0 auto;
@@ -20,7 +24,6 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
 .infobtn {
@@ -122,7 +125,7 @@ input {
 .rankLink {
   cursor: pointer;
   color: #fff;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   font-size: 12px;
   border-bottom: 2px solid #fff;
   height: 30px;
@@ -201,6 +204,24 @@ input {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 765px) {
+  .container {
+    width: 95%;
+    max-width: 760px;
+  }
+  .popupinfo {
+    font-size: 15px;
+    width: 400px;
+  }
+  .popupinfo .popupinfo .title {
+    font-size: 18px;
+  }
+  .popupinfo .popupinfo .rule {
+    font-size: 20px;
+    width: 100px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   html, body {
     margin: 0px;
@@ -210,12 +231,4 @@ input {
     max-width: 320px;
     max-height: 560px;
   }
-}
-
-.container {
-  max-width: 760px;
-}
-
-.container {
-  max-width: 1000px;
 }

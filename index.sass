@@ -14,6 +14,10 @@ html,body
     padding: 0px
     margin: 0px
 .container
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
     border: solid 1px $color_black
     max-width: 400px
     margin: 0 auto
@@ -21,7 +25,7 @@ html,body
     display: flex
     flex-direction: column
     align-items: center
-    position: relative
+    // position: relative
 
 .infobtn
     font-family: Trebuchet MS
@@ -111,7 +115,7 @@ input
 .rankLink
     cursor: pointer
     color: $color_white
-    margin-bottom: 100px
+    margin-bottom: 40px
     font-size: 12px
     border-bottom: 2px solid $color_white
     height: 30px
@@ -176,6 +180,19 @@ input
     .1,.2,.3
         margin: 0 auto
 
+@media screen and ( min-width: 765px)
+    .container
+        width: 95%
+        max-width: 760px
+    .popupinfo
+        font-size: 15px
+        width: 400px
+        .popupinfo .title
+            font-size: 18px
+        .popupinfo .rule
+            font-size: 20px
+            width: 100px
+    
 
 @media screen and ( max-width:320px  )
     html,body
@@ -185,10 +202,3 @@ input
         max-width: 320px
         max-height: 560px
 
-@media screen and ( max-width:768px  )
-.container
-    max-width: 760px
-
-@media screen and ( max-width:1024px  )
-.container
-    max-width: 1000px 

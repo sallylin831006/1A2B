@@ -22,7 +22,7 @@ html, body {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 15px;
   background-color: #2D2D3A;
@@ -262,9 +262,75 @@ html, body {
   color: #fff;
 }
 
+@media screen and (min-width: 765px) {
+  .container {
+    width: 95%;
+    max-width: 760px;
+  }
+  .container .topinfo {
+    width: 80%;
+    min-width: 500px;
+    padding-bottom: 15px;
+  }
+  .container .topinfo .toptime {
+    font-size: 37px;
+  }
+  .container .topinfo .topnum, .container .topinfo #timer, .container .topinfo #play-times {
+    font-size: 20px;
+  }
+  .container .username {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .container .showarea {
+    width: 400px;
+  }
+  .container .showarea .num, .container .showarea .showinfo {
+    font-size: 25px;
+  }
+  .container #result-area {
+    height: 400px;
+  }
+  .container .bottombox {
+    width: 600px;
+  }
+  .container .bottombox .inputbox {
+    width: 70%;
+    height: 55px;
+    min-width: 200px;
+  }
+  .container .bottombox .inputnum1, .container .bottombox .inputnum2, .container .bottombox .inputnum3, .container .bottombox .inputnum4 {
+    font-size: 40px;
+    border-bottom: 4px solid #fff;
+  }
+  .container .bottombox .keyboard {
+    min-width: 500px;
+    padding: 4px;
+  }
+  .container .bottombox .keyboard .btn {
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    line-height: 69px;
+    font-size: 25px;
+  }
+  .container .bottombox .functionbtn {
+    min-width: 450px;
+  }
+  .container .bottombox .functionbtn .delete, .container .bottombox .functionbtn .ok {
+    width: 150px;
+    height: 60px;
+    min-width: 60px;
+    line-height: 59px;
+  }
+  .container .popcontainer {
+    min-width: 500px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .container {
-    max-width: 365px;
+    max-width: 370px;
   }
   .container .topinfo {
     width: 70%;
@@ -279,5 +345,24 @@ html, body {
     width: 60%;
     max-width: 250px;
     padding: 5px 10px 0px 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+  .container .rank_btn {
+    display: none;
+  }
+  .container .result-area {
+    height: 250px;
   }
 }
